@@ -1,0 +1,27 @@
+1. Looking at the top errors printed by get_top_misclassified, name two ways you would modify your classifier to improve accuracy (it could be features, tokenization, or something else.)
+
+One way is that we can increase the list size of neg_words (mentioned above lexicon_features) to improve the analysis of negative words.
+Greater amount of data , better the classification.
+
+Another way is to normalize words to their root forms using WordNet (Senti Wordnet) which gives better results than the AFINN and 
+tokenization methods
+
+
+
+
+2. Implement one of the above methods. How did it affect the results?
+
+When increase the list size of neg_words , pos_words ; the accuracy is increased by 1-5%
+
+Before increasing the word list size
+
+neg_words = set(['bad', 'hate', 'horrible', 'worst', 'boring'])
+pos_words = set(['awesome', 'amazing', 'best', 'good', 'great', 'love', 'wonderful'])
+   testing accuracy=0.730000
+
+After increasing the word list size
+
+neg_words = set(['bad', 'hate', 'horrible', 'worst', 'boring','angry','annoyed','useless','evil','hard'])
+pos_words = set(['awesome', 'amazing', 'best', 'good', 'great', 'love', 'wonderful','calm','delight','happy'])
+    testing accuracy=0.742500
+
